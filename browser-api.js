@@ -60,7 +60,6 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.querySelector("#fullscreen").onclick = function () {
-  alert("clicked");
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
   } else {
@@ -72,9 +71,9 @@ document.querySelector("#file-input").onclick = function () {
   isChoosingFile = true;
 };
 
-document.querySelector("#file-input").onchange = function () {
+document.querySelector("#file-input").addEventListener("change", function () {
   isChoosingFile = false;
-};
+});
 
 // helper function
 function appendState(type, text) {
@@ -82,8 +81,9 @@ function appendState(type, text) {
   const currentState = document.querySelector("#table-body").innerHTML;
   document.querySelector("#table-body").innerHTML = `${
     currentState ? currentState : ""
-  }<tr>
-  <td>${type}</td>
-  <td>${text}</td>
+  }
+  <tr>
+    <td>${type}</td>
+    <td>${text}</td>
   </tr>`;
 }
