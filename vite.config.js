@@ -7,7 +7,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       // build specific config
       base: "/browser-api",
       build: {
-        outDir: "../dist",
+        outDir: "dist",
       },
     };
   }
